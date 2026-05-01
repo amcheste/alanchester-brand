@@ -1,0 +1,20 @@
+{
+  "$schema": "https://design-tokens.org/schema",
+  "name": "alanchester-brand",
+  "version": "2026.04.0",
+  "color": {
+    "ink":      { "value": "#0B0B0C", "comment": "primary text, monogram fill" },
+    "graphite": { "value": "#2B2B2E", "comment": "body copy" },
+    "muted":    { "value": "#8A8A8E", "comment": "captions, eyebrows, page numbers" },
+    "mist":     { "value": "#E6E4DE", "comment": "dividers, hairlines" },
+    "paper":    { "value": "#F6F4EE", "comment": "canonical background" },
+    "accent":   { "value": "#1F6B3A", "comment": "Proof · the data, the pivot, the δ" },
+    "accent-alt": { "value": "#B45A3C", "comment": "Rust/Terracotta · alternate" }
+  },
+  "semantic": {
+    "data":   { "value": "{color.accent}", "comment": "anything that names a finding" },
+    "pivot":  { "value": "{color.accent}", "comment": "any inflection point in a chart or timeline" },
+    "delta":  { "value": "{color.accent}", "comment": "the δ in any equation or label" },
+    "process": { "value": "{color.ink}",   "comment": "method/hypothesis/non-finding text" }
+  }
+}

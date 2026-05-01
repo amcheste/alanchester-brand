@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: validate tokens.json
+        run: node -e "JSON.parse(require('fs').readFileSync('tokens/tokens.json','utf8')); console.log('tokens/tokens.json: ok');"
+
+      - name: validate svg assets
+        run: |
+          set -e
+          shopt -s nullglob
+          count=0
+          for f in assets/*.svg; do
+            xmllint --noout "$f"
+            echo "$f: ok"
+            count=$((count+1))
+          done
+          if [ "$count" -eq 0 ]; then
+            echo "no svgs found in assets/" >&2
+            exit 1
+          fi
+          echo "validated $count svg(s)"

@@ -1,0 +1,42 @@
+{
+  "name": "@amcheste/brand",
+  "version": "2026.04.0",
+  "description": "Alan Chester · personal brand system. For any ε > 0, there exists a δ > 0.",
+  "license": "MIT",
+  "author": {
+    "name": "Alan Chester",
+    "url": "https://github.com/amcheste"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amcheste/alanchester-brand.git"
+  },
+  "keywords": [
+    "brand",
+    "design-system",
+    "design-tokens",
+    "monogram",
+    "personal-brand"
+  ],
+  "type": "module",
+  "exports": {
+    ".":              "./components/index.js",
+    "./tokens":       "./tokens/index.css",
+    "./tokens.json":  "./tokens/tokens.json",
+    "./components":   "./components/index.js",
+    "./assets/*":     "./assets/*"
+  },
+  "files": [
+    "tokens",
+    "components",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true }
+  }
+}

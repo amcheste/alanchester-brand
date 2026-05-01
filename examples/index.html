@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>alanchester-brand · live example</title>
+  <link rel="stylesheet" href="../tokens/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: var(--ac-paper);
+      color: var(--ac-ink);
+      font-family: var(--ac-sans);
+      padding: 64px 48px;
+      max-width: 880px;
+      margin-inline: auto;
+    }
+    .eyebrow {
+      font-family: var(--ac-mono);
+      font-size: var(--ac-text-xs);
+      letter-spacing: var(--ac-track-wide);
+      text-transform: uppercase;
+      color: var(--ac-muted);
+    }
+    h1 {
+      font-weight: var(--ac-weight-medium);
+      font-size: 56px;
+      letter-spacing: var(--ac-track-tight);
+      line-height: var(--ac-lead-tight);
+      margin: 12px 0 28px;
+    }
+    .lede {
+      font-size: var(--ac-text-md);
+      color: var(--ac-graphite);
+      line-height: var(--ac-lead-normal);
+      max-width: 560px;
+    }
+    .lede em { color: var(--ac-accent); font-style: normal; }
+    section {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--ac-mist);
+    }
+    h2 {
+      font-weight: var(--ac-weight-medium);
+      font-size: var(--ac-text-lg);
+      letter-spacing: var(--ac-track-snug);
+      margin: 0 0 20px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--ac-mist);
+    }
+    code {
+      font-family: var(--ac-mono);
+      font-size: var(--ac-text-sm);
+      color: var(--ac-graphite);
+      background: var(--ac-mist);
+      padding: 2px 6px;
+    }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .swatch {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 12px;
+      font-family: var(--ac-mono);
+      font-size: 11px;
+    }
+    .swatch.ink     { background: var(--ac-ink);    color: var(--ac-paper); }
+    .swatch.paper   { background: var(--ac-paper);  color: var(--ac-ink); border: 1px solid var(--ac-mist); }
+    .swatch.muted   { background: var(--ac-muted);  color: white; }
+    .swatch.accent  { background: var(--ac-accent); color: white; }
+    .equation { font-family: var(--ac-mono); font-size: 36px; color: var(--ac-accent); }
+  </style>
+</head>
+<body>
+
+  <p class="eyebrow">examples · live render</p>
+  <h1>The brand,<br>imported.</h1>
+  <p class="lede">
+    This page consumes the package the same way any downstream project would —
+    a token import, a couple SVGs, and we have an identity. Change the version
+    in <code>tokens/colors.css</code> and the whole page updates. <em>That's the contract.</em>
+  </p>
+
+  <section>
+    <p class="eyebrow">marks</p>
+    <h2>The three logo variants</h2>
+    <div class="row">
+      <img src="../assets/monogram-solid.svg" alt="Monogram (solid)" width="80">
+      <img src="../assets/monogram-outline.svg" alt="Monogram (outline)" width="80">
+      <img src="../assets/monogram-accent.svg" alt="Monogram (accent)" width="80">
+      <img src="../assets/wordmark.svg" alt="alan chester." height="40">
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">color</p>
+    <h2>Five tokens, one rule</h2>
+    <div class="swatches">
+      <div class="swatch ink">--ac-ink<br>#0B0B0C</div>
+      <div class="swatch paper">--ac-paper<br>#F6F4EE</div>
+      <div class="swatch muted">--ac-muted<br>#8A8A8E</div>
+      <div class="swatch accent">--ac-accent<br>#1F6B3A</div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">the equation</p>
+    <h2>For any ε &gt; 0, there exists a δ &gt; 0.</h2>
+    <p class="equation">∀ ε &gt; 0, ∃ δ &gt; 0</p>
+  </section>
+
+</body>
+</html>
