@@ -169,7 +169,11 @@ A and C, vertically centered. Don't redraw it; use the components or SVGs.
 │   ├── monogram-outline.svg
 │   ├── monogram-accent.svg
 │   ├── wordmark.svg
-│   └── epsilon-delta.svg
+│   ├── epsilon-delta.svg
+│   └── png/                 Rasterized PNGs at common embed sizes
+│       ├── monogram-{solid,outline,accent}-{256,512,800,1024}.png
+│       ├── wordmark-{800,1600,3200}.png
+│       └── epsilon-delta-{600,900,1200,2400}.png
 │
 ├── docs/
 │   └── brand-document.pdf   The full 13-page brand document
