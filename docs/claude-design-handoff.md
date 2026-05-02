@@ -5,15 +5,18 @@ without the things that have gone wrong before going wrong again.
 
 ## the model
 
-- **claude design** is where you iterate visually — new marks, palette
+- **claude design** is where you iterate visually. New marks, palette
   extensions, layout drafts, generators.
-- **this repo** is where the buildable primitives live — tokens,
+- **this repo** is where the buildable primitives live. Tokens,
   components, assets, anything something else might `import`.
-- **google drive** is where finished artifacts live — decks, PDFs,
+- **google drive** is where finished artifacts live. Decks, PDFs,
   print files, anything you'd send rather than fork.
 
 design produces. claude code curates and commits. drive holds the
 finished outputs.
+
+For brand voice rules that apply to any prose written for this repo
+(including content inside `brand-document.jsx`), see [`voice.md`](voice.md).
 
 ## what to ask claude design for
 
@@ -40,17 +43,17 @@ A copy-paste prompt for claude design is at the bottom of this file.
 If a zip from claude design contains any of these alongside `package/`,
 something is wrong:
 
-- `uploads/` — files you uploaded to the canvas for reference. Often
+- `uploads/`. Files you uploaded to the canvas for reference. Often
   personal (reflections, screenshots, notes). **Never goes in a public
   repo.**
 - `drive-bundle/`, `github-update/`, or any other delta/snapshot
-  directory — usually a stale view of work that's already landed.
-- Loose `*.jsx`, `*.html`, `*.pptx` at the zip root — claude design's
+  directory. Usually a stale view of work that's already landed.
+- Loose `*.jsx`, `*.html`, `*.pptx` at the zip root. Claude design's
   workspace scaffolding. Outputs of the session, not source for the
   package.
 - `scrap-*` anything.
 
-If you see these, don't manually filter — hand the whole zip to claude
+If you see these, don't manually filter. Hand the whole zip to claude
 code anyway. The first thing it does is diff and flag scope problems
 before extracting anything sensitive.
 
@@ -93,11 +96,11 @@ not from any one zip:
 
 Dated semver: `YYYY.MM.PATCH`. Not `0.x.y`.
 
-- Patch (`2026.04.0` → `2026.04.1`) — fixes, asset additions, doc
+- Patch (`2026.04.0` → `2026.04.1`). Fixes, asset additions, doc
   updates. Most things.
-- Minor (`2026.04.0` → `2026.05.0`) — new tokens, new components,
+- Minor (`2026.04.0` → `2026.05.0`). New tokens, new components,
   meaningful expansion of the system.
-- Major (`2026.x.y` → `2027.x.y`) — only if the philosophy changes,
+- Major (`2026.x.y` → `2027.x.y`). Only if the philosophy changes,
   which it shouldn't.
 
 Asset-only PRs frequently land without a version bump. Bump when you
@@ -131,9 +134,11 @@ Copy/paste this when you're ready to hand off a session:
 > - `scrap-*`, screenshots, PDFs, docx
 > - prompts targeting claude code
 >
-> Use the existing brand voice. Lowercase preferred, short sentences,
-> the accent color (`#1F4D3A`, hunter green) only for data and pivots,
-> never decoration.
+> Use the existing brand voice (full rules in `docs/voice.md`).
+> Lowercase preferred. Short sentences. No em dashes. No hyperbole or
+> superlatives. Calibrated hedges, not weak ones. Numerical specificity.
+> Hunter green (`#1F4D3A`) only for data, pivots, or the δ. Never
+> decoration.
 >
 > Match versioning to dated semver (`YYYY.MM.PATCH`). Don't bump
 > `package.json` unless I explicitly asked for a release.
