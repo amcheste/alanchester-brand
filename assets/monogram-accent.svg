@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <title>Alan Chester · Monogram (accent)</title>
-  <desc>Accent variant. Proof-green ground, ink letterforms.</desc>
-  
-  <rect width="64" height="64" fill="#1F6B3A"></rect>
+  <desc>Accent variant. Hunter-green ground, ink letterforms.</desc>
+
+  <rect width="64" height="64" fill="#1F4D3A"></rect>
   
   <g font-family="&#39;IBM Plex Mono&#39;, ui-monospace, monospace" font-weight="500" font-size="26.88" letter-spacing="-0.03em" fill="#0B0B0C" text-anchor="middle" dominant-baseline="central">
     <text x="20" y="32">A</text>

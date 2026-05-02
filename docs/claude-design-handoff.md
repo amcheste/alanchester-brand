@@ -131,8 +131,9 @@ Copy/paste this when you're ready to hand off a session:
 > - `scrap-*`, screenshots, PDFs, docx
 > - prompts targeting claude code
 >
-> Use the existing brand voice — lowercase preferred, short sentences,
-> the accent color (`#1F6B3A`) only for data and pivots, never decoration.
+> Use the existing brand voice. Lowercase preferred, short sentences,
+> the accent color (`#1F4D3A`, hunter green) only for data and pivots,
+> never decoration.
 >
 > Match versioning to dated semver (`YYYY.MM.PATCH`). Don't bump
 > `package.json` unless I explicitly asked for a release.
