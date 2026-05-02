@@ -61,7 +61,7 @@
       .page { margin: 0; box-shadow: none; }
     }
 
-    /* The original Page divs (children of #board > div) are 880×1100 — wrapped at runtime. */
+    /* The original Page divs (children of #board > div) are 880×1100, wrapped at runtime. */
   </style>
 
   <!-- React + Babel for the component bundle -->
@@ -109,12 +109,12 @@
         const wrap = document.createElement("div");
         wrap.className = "page";
 
-        // Scale uniformly to 1056/1100 = 0.96 — fills the full 11in height. Width becomes
+        // Scale uniformly to 1056/1100 = 0.96, fills the full 11in height. Width becomes
         // 880*0.96 = 844.8px, slightly wider than 816px (8.5in). Center horizontally so the
         // small overflow is clipped equally on left/right by .page's overflow:hidden.
         const scale = 1056 / 1100; // 0.9636...
         const scaledW = 880 * scale;
-        const offsetX = (816 - scaledW) / 2; // negative — pulls content left so it centers
+        const offsetX = (816 - scaledW) / 2; // negative, pulls content left so it centers
         const inner = document.createElement("div");
         inner.style.cssText =
           "width: 880px; height: 1100px;" +

@@ -2,7 +2,7 @@
 
 > **For any ε &gt; 0, there exists a δ &gt; 0.**
 > The personal brand system of [Alan Chester](https://github.com/amcheste).
-> Tokens, components, and assets — everything I need to identify my work in code.
+> Tokens, components, and assets. Everything I need to identify my work in code.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-2026.04.0-0B0B0C.svg)](package.json)
@@ -14,13 +14,13 @@
 This is the **system layer** of my personal brand, expressed as code. It's the
 canonical source for:
 
-- 🎨 **Design tokens** — colors, type, spacing — as CSS variables and JSON
-- 🔠 **Logo components** — Monogram, Wordmark, EpsilonDelta — as React components
-- 🖼️ **Static assets** — SVG and PNG exports of every mark
-- 📄 **The brand document** — a 13-page PDF that explains the whole system
+- 🎨 **Design tokens** (colors, type, spacing) as CSS variables and JSON
+- 🔠 **Logo components** (Monogram, Wordmark, EpsilonDelta) as React components
+- 🖼️ **Static assets** (SVG and PNG exports of every mark)
+- 📄 **The brand document** (a 13-page PDF that explains the whole system)
 
-The goal is durability. Anything I build that needs my name on it — a personal
-site, a slide deck, a README, a side project — pulls its identity from here.
+The goal is durability. Anything I build that needs my name on it (a personal
+site, a slide deck, a README, a side project) pulls its identity from here.
 When the brand evolves, it evolves *here* and propagates outward.
 
 ---
@@ -34,7 +34,7 @@ When the brand evolves, it evolves *here* and propagates outward.
 The formal definition of a limit, in seven characters.
 
 - **ε** is the standard the world demands. Define it before the work.
-- **δ** is the move — the pivot, the input, the change in approach — that lands inside ε.
+- **δ** is the small enough step that lands inside ε. The pivot, the input, the change in approach.
 - The promise of the equation is that no matter how tight ε gets, a δ *exists*. The work is finding it.
 
 The whole system is downstream of that line. See [`docs/brand-document.pdf`](docs/) for the full story.
@@ -105,7 +105,7 @@ exactly this reason.
 `#1F4D3A` is **scarce on purpose**. It does exactly one job:
 > **Green = the data, the pivot, the δ.**
 
-Every place you see green, something *changed* — a finding, an inflection, a result.
+Every place you see green, something *changed*. A finding, an inflection, a result.
 
 **Do** apply it to:
 - ε in any equation (the standard the data sets)
@@ -118,7 +118,7 @@ Every place you see green, something *changed* — a finding, an inflection, a r
 - Headlines (they're claims, not findings)
 - Generic emphasis on opinions
 
-If a green element doesn't represent **data, evidence, or a pivot** — demote it
+If a green element doesn't represent **data, evidence, or a pivot**, demote it
 to ink. The full ruleset lives on page 9 of the brand document.
 
 ### Type
@@ -187,23 +187,23 @@ A and C, vertically centered. Don't redraw it; use the components or SVGs.
 ## Versioning
 
 Brand versions are dated: **`YYYY.MM.PATCH`**. The current version is
-**`2026.04.0`** — April 2026, initial publication.
+**`2026.04.0`**, April 2026, initial publication.
 
 A bump to the *minor* (month) component means the system extended:
 new tokens, new components. A bump to *patch* means a fix:
 typo, color tweak, asset re-export. The major (year) changes when the
-core philosophy does — which should be never.
+core philosophy does, which should be never.
 
 ---
 
 ## Contributing
 
 This is a personal brand. It's **MIT-licensed** because the code primitives
-are useful — feel free to study them, fork the structure, learn from the
-patterns. But the marks (`AεC`, the `alan chester.` wordmark, the equation
-as identity) are mine; please don't represent yourself with them.
+are useful. Feel free to study them, fork the structure, learn from the
+patterns. The marks (`AεC`, the `alan chester.` wordmark, the equation
+as identity) are mine. Please don't represent yourself with them.
 
-If you spot a bug in the code — a token mismatch, a broken SVG, a typo — open
+If you spot a bug in the code (a token mismatch, a broken SVG, a typo), open
 a PR. The notebook is open.
 
 ---

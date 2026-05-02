@@ -1,4 +1,4 @@
-// Alan Chester — Brand Document
+// Alan Chester · Brand Document
 // A formal, print-ready brand book. Pulls components from brand.jsx (loaded first).
 
 const BD_PALETTE = {
@@ -98,7 +98,7 @@ function Eyebrow({ children, dark = false, accent = false }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 01 — Cover
+// 01 · Cover
 // ─────────────────────────────────────────────────────────────
 
 function PageCover({ n, total }) {
@@ -145,7 +145,7 @@ function PageCover({ n, total }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 02 — Contents
+// 02 · Contents
 // ─────────────────────────────────────────────────────────────
 
 function PageContents({ n, total, items }) {
@@ -186,7 +186,7 @@ function PageContents({ n, total, items }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 03 — Philosophy / Tagline
+// 03 · Philosophy / Tagline
 // ─────────────────────────────────────────────────────────────
 
 function PagePhilosophy({ n, total }) {
@@ -256,7 +256,7 @@ function PrincipleCard({ tag, title, body }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 04 — How I work
+// 04 · How I work
 // ─────────────────────────────────────────────────────────────
 
 function PageMethod({ n, total }) {
@@ -340,7 +340,7 @@ function Bullet({ children }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 05 — Identity (logo + monogram)
+// 05 · Identity (logo + monogram)
 // ─────────────────────────────────────────────────────────────
 
 function PageIdentity({ n, total }) {
@@ -415,7 +415,7 @@ function DoDont({ kind, text }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 06 — Color & type
+// 06 · Color & type
 // ─────────────────────────────────────────────────────────────
 
 function PageColorType({ n, total, swatches }) {
@@ -479,7 +479,7 @@ function PageColorType({ n, total, swatches }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 05 — Lenses (convergence: CS ∩ Math ∩ Security ∩ MBA)
+// 05 · Lenses (convergence: CS ∩ Math ∩ Security ∩ MBA)
 // ─────────────────────────────────────────────────────────────
 
 function PageLenses({ n, total }) {
@@ -503,7 +503,7 @@ function PageLenses({ n, total }) {
         <Eyebrow>diagram · ∩</Eyebrow>
         <div style={{ marginTop: 12, display: "flex", justifyContent: "center" }}>
           <svg width="560" height="320" viewBox="0 0 560 320" style={{ display: "block", overflow: "visible" }}>
-            {/* Four overlapping circles — pushed down to leave room for labels above */}
+            {/* Four overlapping circles · pushed down to leave room for labels above */}
             {[
               { cx: 200, cy: 150, label: "CS",       tickX: 200, labelX: 200, labelY: 50, anchor: "middle" },
               { cx: 260, cy: 150, label: "Math",     tickX: 260, labelX: 260, labelY: 36, anchor: "middle" },
@@ -514,7 +514,7 @@ function PageLenses({ n, total }) {
                 <circle cx={c.cx} cy={c.cy} r="80" fill="none" stroke="var(--ac-ink)" strokeWidth="1" opacity="0.42" />
               </g>
             ))}
-            {/* Labels with tick connectors — drawn AFTER circles so they sit on top */}
+            {/* Labels with tick connectors · drawn AFTER circles so they sit on top */}
             {[
               { label: "CS",       tickX: 165, labelX: 165, labelY: 60, topY: 70  },
               { label: "Math",     tickX: 245, labelX: 245, labelY: 44, topY: 70  },
@@ -534,18 +534,18 @@ function PageLenses({ n, total }) {
                 </g>
               );
             })}
-            {/* Convergence dot — the visual center where all four circles meet, INSIDE the circles */}
+            {/* Convergence dot · the visual center where all four circles meet, INSIDE the circles */}
             <circle cx="280" cy="150" r="3.5" fill="var(--ac-accent)" />
             {/* Connector from convergence dot down to the focal label, BELOW all circles */}
             <line x1="280" y1="232" x2="280" y2="262" stroke="var(--ac-accent)" strokeWidth="1" opacity="0.5" />
-            {/* Focal point — moved BELOW the circles so the rule lines don't cut through it */}
+            {/* Focal point · moved BELOW the circles so the rule lines don't cut through it */}
             <text x="280" y="282" fontFamily="var(--ac-mono)" fontSize="20" fontWeight="500" fill="var(--ac-accent)" textAnchor="middle" letterSpacing="-0.01em">
               (ε, δ)
             </text>
             <text x="280" y="302" fontFamily="var(--ac-mono)" fontSize="9" letterSpacing="0.18em" fill="var(--ac-muted)" textAnchor="middle">
               FOCAL POINT
             </text>
-            {/* Side caption — pushed down to align with the new focal-point row */}
+            {/* Side caption · pushed down to align with the new focal-point row */}
             <text x="40" y="302" fontFamily="var(--ac-mono)" fontSize="10" letterSpacing="0.06em" fill="var(--ac-muted)">
               ∩ of four fields
             </text>
@@ -580,7 +580,7 @@ function PageLenses({ n, total }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 06 — Transitions (cloud → AI as two ε-δ intervals)
+// 06 · Transitions (cloud → AI as two ε-δ intervals)
 // ─────────────────────────────────────────────────────────────
 
 function PageTransitions({ n, total }) {
@@ -678,7 +678,7 @@ function PageTransitions({ n, total }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 07 — Method · in product (experimentation as PM operating model)
+// 07 · Method · in product (experimentation as PM operating model)
 // ─────────────────────────────────────────────────────────────
 
 function PageProductMethod({ n, total }) {
@@ -753,7 +753,7 @@ function PageProductMethod({ n, total }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 08 — Bios (GitHub vs LinkedIn — two registers, one person)
+// 08 · Bios (GitHub vs LinkedIn · two registers, one person)
 // ─────────────────────────────────────────────────────────────
 
 function PageBios({ n, total }) {
@@ -850,7 +850,7 @@ function PageBios({ n, total }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 09 — The Accent (what green means)
+// 09 · The Accent (what green means)
 // ─────────────────────────────────────────────────────────────
 
 function PageAccent({ n, total }) {
@@ -951,7 +951,7 @@ function AccentRule({ tag, where, example, rule }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 10 — Voice
+// 10 · Voice
 // ─────────────────────────────────────────────────────────────
 
 function PageVoice({ n, total }) {
@@ -1002,7 +1002,7 @@ function VoiceRow({ yes, no }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 08 — Closing
+// 08 · Closing
 // ─────────────────────────────────────────────────────────────
 
 function PageClose({ n, total }) {

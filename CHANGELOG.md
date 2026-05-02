@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to dated semver: YYYY.MM.PATCH.
 
-## [2026.04.0] — 2026-04
+## [2026.04.0] - 2026-04
 ### Added
 - Initial publication.
 - Color tokens (--ac-ink, --ac-paper, --ac-graphite, --ac-muted, --ac-mist, --ac-accent).

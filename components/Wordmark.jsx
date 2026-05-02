@@ -2,7 +2,7 @@
  * Wordmark · "alan chester."
  *
  * Lowercase. Tight letter-spacing. Trailing period in ink.
- * The period is part of the mark — a closing seal, not decoration.
+ * The period is part of the mark. A closing seal, not decoration.
  *
  * Requires CSS variables from @amcheste/brand/tokens:
  *   --ac-ink, --ac-sans
