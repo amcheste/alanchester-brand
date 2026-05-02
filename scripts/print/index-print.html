@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alan Chester · Personal Brand · v2026.04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ac-ink:      #0B0B0C;
+      --ac-graphite: #2B2B2E;
+      --ac-muted:    #8A8A8E;
+      --ac-mist:     #E6E4DE;
+      --ac-paper:    #F6F4EE;
+      --ac-accent:   #1F4D3A;
+      --ac-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+      --ac-mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    /* Print page = US Letter, no browser margins */
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #aaa;
+      font-family: var(--ac-sans);
+      color: var(--ac-ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* On screen: stack pages vertically with breathing room.
+       In print: each .page becomes one physical page. */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      background: var(--ac-paper);
+      box-sizing: border-box;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+
+    @media screen {
+      body { padding: 32px 0; }
+      .page {
+        margin: 0 auto 32px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      }
+    }
+    @media print {
+      body { padding: 0; background: white; }
+      .page { margin: 0; box-shadow: none; }
+    }
+
+    /* The original Page divs (children of #board > div) are 880×1100 — wrapped at runtime. */
+  </style>
+
+  <!-- React + Babel for the component bundle -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="brand.jsx"></script>
+  <script type="text/babel" src="brand-document.jsx"></script>
+</head>
+<body>
+
+  <!-- The board renders its 13 pages here.
+       Each child is a 880×1100 Page; we wrap them in scaled .page containers post-render. -->
+  <div id="board"></div>
+
+  <script type="text/babel">
+    const swatches = [
+
+      { name: "ink",      value: "#0B0B0C", role: "primary" },
+      { name: "graphite", value: "#2B2B2E", role: "body" },
+      { name: "muted",    value: "#8A8A8E", role: "tertiary" },
+      { name: "mist",     value: "#E6E4DE", role: "rules" },
+      { name: "paper",    value: "#F6F4EE", role: "ground" },
+      { name: "accent",   value: "#1F4D3A", role: "data · δ" },
+
+    ];
+
+    const root = ReactDOM.createRoot(document.getElementById("board"));
+    root.render(<BrandDocumentBoard swatches={swatches} />);
+
+    // After mount, wrap each rendered <Page> in a scaled print container.
+    function reflow() {
+      const board = document.querySelector("#board > div");
+      if (!board || board.children.length === 0) {
+        return setTimeout(reflow, 50);
+      }
+      // Strip the BrandDocumentBoard's outer flex/padding wrapper styling
+      // so we can lay pages out directly.
+      board.style.cssText = "display: block; padding: 0; gap: 0; background: transparent;";
+
+      Array.from(board.children).forEach((p) => {
+        // Each Page is 880×1100 internally. Wrap & scale to fill US Letter (8.5×11in = 816×1056 @96dpi).
+        // 816/880 = 0.92727..., 1056/1100 = 0.96. Use the larger so we fully cover (no paper showing
+        // around dark pages) and clip any tiny overshoot via overflow:hidden on .page.
+        const wrap = document.createElement("div");
+        wrap.className = "page";
+
+        // Scale uniformly to 1056/1100 = 0.96 — fills the full 11in height. Width becomes
+        // 880*0.96 = 844.8px, slightly wider than 816px (8.5in). Center horizontally so the
+        // small overflow is clipped equally on left/right by .page's overflow:hidden.
+        const scale = 1056 / 1100; // 0.9636...
+        const scaledW = 880 * scale;
+        const offsetX = (816 - scaledW) / 2; // negative — pulls content left so it centers
+        const inner = document.createElement("div");
+        inner.style.cssText =
+          "width: 880px; height: 1100px;" +
+          " transform: translateX(" + offsetX + "px) scale(" + scale + ");" +
+          " transform-origin: top left;";
+        p.parentNode.insertBefore(wrap, p);
+        wrap.appendChild(inner);
+        inner.appendChild(p);
+
+        // Make sure the page background matches the inner page's background so there's
+        // no visible mismatch even if scale rounds slightly. Read the inner Page's bg.
+        const innerBg = getComputedStyle(p).backgroundColor;
+        if (innerBg && innerBg !== "rgba(0, 0, 0, 0)") wrap.style.background = innerBg;
+      });
+
+      window.__brandDocReady = true;
+      document.title = "Alan Chester · Personal Brand · v2026.04 · ready";
+
+      // Auto-print: wait for fonts + a settle delay before invoking print dialog.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          setTimeout(() => window.print(), 500);
+        });
+      } else {
+        setTimeout(() => window.print(), 800);
+      }
+    }
+    requestAnimationFrame(() => requestAnimationFrame(reflow));
+  </script>
+
+</body>
+</html>
