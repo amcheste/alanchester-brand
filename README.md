@@ -4,7 +4,7 @@
 > The personal brand system of [Alan Chester](https://github.com/amcheste).
 > Tokens, components, and assets — everything I need to identify my work in code.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-1F6B3A.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-2026.04.0-0B0B0C.svg)](package.json)
 
 ---
@@ -97,12 +97,12 @@ exactly this reason.
 | `--ac-muted`       | `#8A8A8E`  | captions, eyebrows, page numbers                 |
 | `--ac-mist`        | `#E6E4DE`  | dividers, hairlines                              |
 | `--ac-paper`       | `#F6F4EE`  | canonical background                             |
-| `--ac-accent`      | `#1F6B3A`  | **the data, the pivot, the δ** *(rule below)*    |
+| `--ac-accent`      | `#1F4D3A`  | **Hunter Green · the data, the pivot, the δ** *(rule below)* |
 | `--ac-accent-alt`  | `#B45A3C`  | rust · alternate accent (rarely used)            |
 
 ### The accent rule (read this)
 
-`#1F6B3A` is **scarce on purpose**. It does exactly one job:
+`#1F4D3A` is **scarce on purpose**. It does exactly one job:
 > **Green = the data, the pivot, the δ.**
 
 Every place you see green, something *changed* — a finding, an inflection, a result.

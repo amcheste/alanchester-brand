@@ -16,7 +16,7 @@
   /* ── Accent ───────────────────────────────────────── */
   /* Green = the data, the pivot, the δ.
    * Use only on words/marks that represent evidence or change. */
-  --ac-accent:   #1F6B3A;  /* Proof · canonical accent */
+  --ac-accent:   #1F4D3A;  /* Hunter Green · canonical accent */
 
   /* Alternate accent — Rust/Terracotta. Available, not preferred. */
   --ac-accent-alt: #B45A3C;
