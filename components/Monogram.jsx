@@ -9,7 +9,7 @@
  *   - "outline" paper fill, 1.5px ink border, ink letterforms
  *   - "accent"  green fill, ink letterforms
  *
- * Glyphs (the lifted constant — what sits between A and C):
+ * Glyphs (the lifted constant that sits between A and C):
  *   - "epsilon" ε · canonical · the standard the data sets   (default)
  *   - "oplus"   ⊕
  *   - "cap"     ∩

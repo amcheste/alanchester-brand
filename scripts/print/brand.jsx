@@ -1,4 +1,4 @@
-// Alan Chester — personal brand artifacts
+// Alan Chester · personal brand artifacts
 // All artboards read CSS vars set on :root by the Tweaks layer.
 
 const PALETTE = {
@@ -48,8 +48,8 @@ function Monogram({ size = 64, variant = "solid", glyph }) {
     mapsto:    { ch: "↦",  scale: 0.92, opacity: 0.65, gap: 0.09 },
     equiv:     { ch: "≡",  scale: 0.88, opacity: 0.65, gap: 0.10 },
     phi:       { ch: "φ",  scale: 0.78, opacity: 0.45, gap: 0.07 },
-    epsilon:   { ch: "ε",  scale: 0.50, opacity: 1.0,  gap: 0.09 },  // small lifted constant — A · ε · C
-    dot:       { ch: "·",  scale: 1.0,  opacity: 0.65, gap: 0.04 },  // tightest — near-invisible
+    epsilon:   { ch: "ε",  scale: 0.50, opacity: 1.0,  gap: 0.09 },  // small lifted constant. A · ε · C
+    dot:       { ch: "·",  scale: 1.0,  opacity: 0.65, gap: 0.04 },  // tightest, near-invisible
     therefore: { ch: "∴",  scale: 0.72, opacity: 0.45, gap: 0.06 },
     slash:     { ch: "/",  scale: 1.0,  opacity: 0.55, gap: 0.06 },
   };
@@ -126,7 +126,7 @@ function MetaLabel({ children, style }) {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 1 — Wordmark lockups
+// Artboard 1 · Wordmark lockups
 // ——————————————————————————————————————————————————————————————
 
 function WordmarkBoard() {
@@ -181,7 +181,7 @@ function Row({ label, children }) {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 2 — Monogram system
+// Artboard 2 · Monogram system
 // ——————————————————————————————————————————————————————————————
 
 function MonogramBoard() {
@@ -235,7 +235,7 @@ function MonogramBoard() {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 3 — Color palette
+// Artboard 3 · Color palette
 // ——————————————————————————————————————————————————————————————
 
 function PaletteBoard({ swatches }) {
@@ -286,7 +286,7 @@ function Swatch({ name, token, value, fg }) {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 4 — Typography
+// Artboard 4 · Typography
 // ——————————————————————————————————————————————————————————————
 
 function TypographyBoard() {
@@ -303,13 +303,13 @@ function TypographyBoard() {
 
         <TypeSpec label="headline" meta="var(--ac-sans) · 500 · -0.02em">
           <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 40, lineHeight: 1.1, letterSpacing: "-0.02em", color: PALETTE.ink, maxWidth: 720 }}>
-            For any ε greater than zero, there exists a δ — and the data is what decides where it lives.
+            For any ε greater than zero, there exists a δ, and the data is what decides where it lives.
           </div>
         </TypeSpec>
 
         <TypeSpec label="body" meta="var(--ac-sans) · 400 · 0">
           <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 400, fontSize: 16, lineHeight: 1.6, color: PALETTE.graphite, maxWidth: 640 }}>
-The data names the difference, and the difference becomes the shape of the work. Body copy sits at sixteen pixels with a generous line height — long-form writing, hypothesis notes, the kind of thing meant to be read once and remembered.
+The data names the difference, and the difference becomes the shape of the work. Body copy sits at sixteen pixels with a generous line height. Long-form writing, hypothesis notes, the kind of thing meant to be read once and remembered.
           </div>
         </TypeSpec>
 
@@ -349,13 +349,13 @@ function TypeSpec({ label, meta, children }) {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 5 — Letterhead
+// Artboard 5 · Letterhead
 // ——————————————————————————————————————————————————————————————
 
 function LetterheadBoard() {
   return (
     <div style={{ ...boardStyle({ padding: 0 }), background: PALETTE.paper }}>
-      {/* letterhead itself — US Letter proportions within the artboard */}
+      {/* letterhead itself · US Letter proportions within the artboard */}
       <div style={{ padding: "72px 88px", display: "flex", flexDirection: "column", gap: 56, minHeight: "100%", position: "relative" }}>
         {/* Header */}
         <header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -380,7 +380,7 @@ function LetterheadBoard() {
             Dear <span style={{ color: PALETTE.ink }}>reader</span>,
           </p>
           <p style={{ fontFamily: "var(--ac-sans)", fontSize: 13, lineHeight: 1.65, color: PALETTE.graphite, margin: 0 }}>
-            Thank you for taking the time. The pages that follow are meant to be read at whatever pace suits you — there is no urgency built into them, only care.
+            Thank you for taking the time. The pages that follow are meant to be read at whatever pace suits you. There is no urgency built into them, only care.
           </p>
           <p style={{ fontFamily: "var(--ac-sans)", fontSize: 13, lineHeight: 1.65, color: PALETTE.graphite, margin: 0 }}>
             If anything is unclear, the fault is mine, not yours. I would be glad to talk through it.
@@ -431,10 +431,10 @@ function LetterheadBoard() {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 6 — LinkedIn banner (1584 × 396)
+// Artboard 6 · LinkedIn banner (1584 × 396)
 // ——————————————————————————————————————————————————————————————
 
-// LinkedIn banner — avatar overlaps lower-left on real LinkedIn,
+// LinkedIn banner · avatar overlaps lower-left on real LinkedIn,
 // so keep the left ~280px and bottom ~110px clear of critical content.
 function LinkedInBannerBoard() {
   return (
@@ -453,7 +453,7 @@ function LinkedInBannerBoard() {
       <div style={{ position: "absolute", left: "44%", right: 64, top: "50%", height: 1, background: "rgba(255,255,255,0.12)" }} />
       <div style={{ position: "absolute", left: "44%", right: 64, top: "50%", height: 1, background: PALETTE.accent, opacity: 0.8, width: 120 }} />
 
-      {/* avatar safe zone indicator — invisible in final, just a reserve */}
+      {/* avatar safe zone indicator · invisible in final, just a reserve */}
 
       {/* top-left mono meta */}
       <div style={{ position: "absolute", top: 32, left: 56, display: "flex", alignItems: "center", gap: 14 }}>
@@ -467,21 +467,21 @@ function LinkedInBannerBoard() {
         </span>
       </div>
 
-      {/* HERO — centered vertically, offset right of the avatar safe zone */}
+      {/* HERO · centered vertically, offset right of the avatar safe zone */}
       <div style={{ position: "absolute", left: 320, right: 56, top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 12, letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
-          — ε
+         . ε
         </span>
         <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 92, lineHeight: 0.95, letterSpacing: "-0.04em", color: "#FAF8F2", whiteSpace: "nowrap" }}>
           Alan Chester
         </div>
         <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 400, fontSize: 22, lineHeight: 1.3, letterSpacing: "-0.015em", color: "rgba(255,255,255,0.78)", maxWidth: 760 }}>
           Engineer turned product leader.{" "}
-          <span style={{ color: PALETTE.accent }}>Cloud, then AI — same pattern, smaller margin.</span>
+          <span style={{ color: PALETTE.accent }}>Cloud, then AI. Same pattern, smaller margin.</span>
         </div>
       </div>
 
-      {/* bottom-right — quiet handle */}
+      {/* bottom-right · quiet handle */}
       <div style={{ position: "absolute", right: 56, bottom: 28, display: "flex", alignItems: "center", gap: 18 }}>
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>
           @amcheste
@@ -491,7 +491,7 @@ function LinkedInBannerBoard() {
   );
 }
 
-// Alternate — light paper variant with typographic hero + systems diagram
+// Alternate · light paper variant with typographic hero + systems diagram
 function LinkedInBannerBoardAlt() {
   return (
     <div style={{ width: "100%", height: "100%", background: PALETTE.paper, position: "relative", overflow: "hidden" }}>
@@ -512,10 +512,10 @@ function LinkedInBannerBoardAlt() {
         <Monogram size={36} />
       </div>
 
-      {/* avatar safe zone on left — hero starts at 320px */}
+      {/* avatar safe zone on left · hero starts at 320px */}
       <div style={{ position: "absolute", left: 320, right: "46%", top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 12, letterSpacing: "0.32em", textTransform: "uppercase", color: PALETTE.muted }}>
-          — ε
+         . ε
         </span>
         <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 76, lineHeight: 0.95, letterSpacing: "-0.04em", color: PALETTE.ink }}>
           Alan Chester
@@ -532,7 +532,7 @@ function LinkedInBannerBoardAlt() {
 }
 
 function AgentDiagram() {
-  // Quiet abstract — a large ε against a careful grid, with epsilon-delta annotation.
+  // Quiet abstract · a large ε against a careful grid, with epsilon-delta annotation.
   // No system architecture; no positioning. Just a mathematical mark.
   const stroke = "rgba(255,255,255,0.22)";
   const strokeStrong = "rgba(255,255,255,0.55)";
@@ -549,7 +549,7 @@ function AgentDiagram() {
       {/* horizontal centerline */}
       <line x1="100" y1="198" x2="540" y2="198" stroke={stroke} strokeWidth="1" />
 
-      {/* delta tick — small careful interval centered on the line */}
+      {/* delta tick · small careful interval centered on the line */}
       <g stroke={strokeStrong} strokeWidth="1">
         <line x1="240" y1="190" x2="240" y2="206" />
         <line x1="360" y1="190" x2="360" y2="206" />
@@ -557,7 +557,7 @@ function AgentDiagram() {
       <line x1="240" y1="198" x2="360" y2="198" stroke={accent} strokeWidth="2" />
       <text x="300" y="226" textAnchor="middle" fontFamily="var(--ac-mono)" fontSize="11" fill="rgba(255,255,255,0.7)" letterSpacing="0.12em">δ</text>
 
-      {/* the epsilon — quiet, large */}
+      {/* the epsilon · quiet, large */}
       <text
         x="460"
         y="248"
@@ -583,7 +583,7 @@ function AgentDiagram() {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Glyph study — all monogram options in one view
+// Glyph study · all monogram options in one view
 // ——————————————————————————————————————————————————————————————
 
 function GlyphStudyBoard() {
@@ -635,7 +635,7 @@ function MathMotifsBoard() {
       <TopMeta label="05 · Motifs" sub="ε · the margin that matters" />
 
       <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 28 }}>
-        {/* Epsilon hero — the brand's signature concept (math) */}
+        {/* Epsilon hero · the brand's signature concept (math) */}
         <div style={{ border: `1px solid ${PALETTE.ink}`, padding: 36, display: "flex", flexDirection: "column", gap: 18, background: PALETTE.paper, gridRow: "span 2" }}>
           <MetaLabel>signature concept · math</MetaLabel>
           <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
@@ -645,18 +645,18 @@ function MathMotifsBoard() {
                 For any ε &gt; 0
               </span>
               <span style={{ fontFamily: "var(--ac-sans)", fontSize: 13, color: PALETTE.graphite, lineHeight: 1.55, maxWidth: 340 }}>
-                The mathematician's symbol for an arbitrarily small margin — the threshold the data has to clear.
+                The mathematician's symbol for an arbitrarily small margin, the threshold the data has to clear.
                 A standing invitation to pivot when the evidence asks for it.
               </span>
             </div>
           </div>
           <div style={{ marginTop: 8, paddingTop: 18, borderTop: `1px solid ${PALETTE.mist}`, fontFamily: "var(--ac-mono)", fontSize: 13, lineHeight: 1.7, color: PALETTE.graphite }}>
             ∀ ε &gt; 0, ∃ δ &gt; 0 : |x − a| &lt; δ ⇒ |f(x) − L| &lt; ε<br/>
-            <span style={{ color: PALETTE.muted }}>— the definition of a limit. also: how good work feels.</span>
+            <span style={{ color: PALETTE.muted }}>The definition of a limit. Also: how good work feels.</span>
           </div>
         </div>
 
-        {/* Theorem — voice (math + experiment, fused) */}
+        {/* Theorem · voice (math + experiment, fused) */}
         <div style={{ border: `1px solid ${PALETTE.mist}`, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
           <MetaLabel>theorem · brand voice</MetaLabel>
           <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 20, lineHeight: 1.2, letterSpacing: "-0.02em", color: PALETTE.ink }}>
@@ -665,19 +665,19 @@ function MathMotifsBoard() {
           </div>
           <div style={{ fontFamily: "var(--ac-sans)", fontSize: 12.5, lineHeight: 1.55, color: PALETTE.graphite }}>
             <span style={{ fontFamily: "var(--ac-mono)", color: PALETTE.accent, marginRight: 6 }}>Pf.</span>
-            Let belief B exist. Pre-register prediction p. Run smallest decisive trial. Publish result — wins or nulls — so the next experiment starts further along. Shrink ε.
+            Let belief B exist. Pre-register prediction p. Run smallest decisive trial. Publish result, wins or nulls, so the next experiment starts further along. Shrink ε.
             <span style={{ fontFamily: "var(--ac-mono)", color: PALETTE.accent, marginLeft: 6 }}>∎</span>
           </div>
         </div>
 
-        {/* The mark as a definition — math meets method */}
+        {/* The mark as a definition · math meets method */}
         <div style={{ border: `1px solid ${PALETTE.mist}`, padding: 28, display: "flex", flexDirection: "column", gap: 12 }}>
           <MetaLabel>the mark · as a definition</MetaLabel>
           <div style={{ fontFamily: "var(--ac-mono)", fontSize: 17, lineHeight: 1.6, color: PALETTE.ink, letterSpacing: "-0.01em" }}>
             ∀ B ∈ beliefs, ∃ test t : <span style={{ color: PALETTE.accent }}>B ⊨ t</span> ∨ <span style={{ color: PALETTE.accent }}>¬B</span>
           </div>
           <div style={{ fontFamily: "var(--ac-mono)", fontSize: 12, lineHeight: 1.7, color: PALETTE.graphite }}>
-            for every belief there is a test —<br/>
+            for every belief there is a test,<br/>
             the result revises the belief,<br/>
             the notebook stays open. <span style={{ color: PALETTE.accent }}>∎</span>
           </div>
@@ -719,7 +719,7 @@ function MethodStrip() {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Lab Notebook board — the experimental brand artifact
+// Lab Notebook board · the experimental brand artifact
 // ——————————————————————————————————————————————————————————————
 
 function LabNotebookBoard() {
@@ -751,7 +751,7 @@ function LabNotebookBoard() {
           A/B by squad for 4 sprints. Pre-registered metrics: cycle time, PR review latency, "felt aligned" survey (1–5).
         </NotebookCol>
         <NotebookCol tag="R" label="result · partial">
-          n=2 squads · sprint 2/4. Cycle −11%. Alignment −0.2 (n.s.). Continuing to collect — see commit log.
+          n=2 squads · sprint 2/4. Cycle −11%. Alignment −0.2 (n.s.). Continuing to collect. See commit log.
         </NotebookCol>
       </div>
 
@@ -762,7 +762,7 @@ function LabNotebookBoard() {
           <span style={{ fontFamily: "var(--ac-mono)", fontSize: 10, color: PALETTE.muted, letterSpacing: "0.08em" }}>github.com/amcheste/notebook</span>
         </div>
         <div style={{ fontFamily: "var(--ac-mono)", fontSize: 12, lineHeight: 1.85, color: PALETTE.graphite }}>
-          <CommitRow sha="a91f3c2" msg="result(s2): cycle −11%, alignment flat. write up null on review-latency." date="04·24" />
+          <CommitRow sha="a91f3c2" msg="result(s2): cycle −11%, alignment flat. Write up null on review-latency." date="04·24" />
           <CommitRow sha="6b0d711" msg="method: pre-register survey question wording" date="04·19" />
           <CommitRow sha="2e84a90" msg="hyp: shorter standup ⇒ ≥8% cycle-time drop" date="04·12" />
           <CommitRow sha="0ff1ce0" msg="obs: 4 of 6 squads run >25min standups" date="04·08" />
@@ -774,7 +774,7 @@ function LabNotebookBoard() {
         {[
           ["pre-register", "predict before you measure"],
           ["publish nulls", "the failed test is data"],
-          ["open source", "default permissive — MIT / CC-BY"],
+          ["open source", "default permissive. MIT / CC-BY"],
         ].map(([t, d]) => (
           <div key={t} style={{ borderTop: `1px solid ${PALETTE.ink}`, paddingTop: 10 }}>
             <span style={{ fontFamily: "var(--ac-sans)", fontSize: 13, fontWeight: 500, color: PALETTE.ink, letterSpacing: "-0.01em" }}>{t}</span>
@@ -811,7 +811,7 @@ function CommitRow({ sha, msg, date }) {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Open Science board — manifesto + license posture
+// Open Science board · manifesto + license posture
 // ——————————————————————————————————————————————————————————————
 
 function OpenScienceBoard() {
@@ -824,11 +824,11 @@ function OpenScienceBoard() {
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <span style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 44, lineHeight: 1.02, letterSpacing: "-0.03em", color: PALETTE.ink }}>
             Knowledge that isn't shared<br/>
-            isn't <span style={{ color: PALETTE.accent }}>knowledge</span> — it's inventory.
+            isn't <span style={{ color: PALETTE.accent }}>knowledge</span>. It's inventory.
           </span>
           <p style={{ margin: 0, fontFamily: "var(--ac-sans)", fontSize: 14, lineHeight: 1.6, color: PALETTE.graphite, maxWidth: 540 }}>
             The fastest path to a better answer is more people testing it.
-            I work in the open whenever I can — code, methods, data, the messy version-history
+            I work in the open whenever I can. Code, methods, data, the messy version-history
             that shows how a result actually got built. The point isn't transparency for its own sake;
             it's compounding. Open work gets cited, corrected, and extended. Closed work gets repeated.
           </p>
@@ -908,7 +908,7 @@ function LatticeSVG() {
 }
 
 // ——————————————————————————————————————————————————————————————
-// Artboard 7 — Style guide card (single summary)
+// Artboard 7 · Style guide card (single summary)
 // ——————————————————————————————————————————————————————————————
 
 function StyleGuideCard({ swatches }) {
@@ -924,7 +924,7 @@ function StyleGuideCard({ swatches }) {
       </header>
 
       <div style={{ marginTop: 32, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
-        {/* LEFT — logo usage */}
+        {/* LEFT · logo usage */}
         <section style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <SectionHeader n="A" title="Logo system" />
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -953,19 +953,19 @@ function StyleGuideCard({ swatches }) {
             <SectionHeader n="B" title="Typography" />
             <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
               <div style={{ fontFamily: "var(--ac-sans)", fontSize: 32, fontWeight: 500, letterSpacing: "-0.03em", color: PALETTE.ink, lineHeight: 1 }}>
-                Display — var(--ac-sans)
+                Display. var(--ac-sans)
               </div>
               <div style={{ fontFamily: "var(--ac-sans)", fontSize: 14, color: PALETTE.graphite, lineHeight: 1.5 }}>
-                Body — var(--ac-sans) · 400 — used for long-form copy, proposals, and correspondence.
+                Body. var(--ac-sans) · 400. used for long-form copy, proposals, and correspondence.
               </div>
               <div style={{ fontFamily: "var(--ac-mono)", fontSize: 12, color: PALETTE.ink, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                mono — var(--ac-mono) · labels · metadata
+                mono. var(--ac-mono) · labels · metadata
               </div>
             </div>
           </div>
         </section>
 
-        {/* RIGHT — palette + application */}
+        {/* RIGHT · palette + application */}
         <section style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <SectionHeader n="C" title="Palette" />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 8 }}>
