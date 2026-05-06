@@ -41,7 +41,7 @@ function Page({ n, total, title, children, dark = false }) {
 
       <footer style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 14, borderTop: `1px solid ${dark ? "rgba(255,255,255,0.12)" : BD_PALETTE.mist}` }}>
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 10, color: sub, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-          v2026.04 · rev 01
+          v2026.05 · rev 02
         </span>
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 10, color: sub, letterSpacing: "0.18em" }}>
           {String(n).padStart(2, "0")} / {String(total).padStart(2, "0")}
@@ -106,7 +106,7 @@ function PageCover({ n, total }) {
     <Page n={n} total={total} title="cover" dark>
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", paddingTop: 24 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          <Eyebrow dark>brand · identity · voice · 2026.04</Eyebrow>
+          <Eyebrow dark>brand · identity · voice · 2026.05</Eyebrow>
           <Monogram size={88} variant="outline" />
         </div>
 
@@ -130,7 +130,7 @@ function PageCover({ n, total }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
           {[
             ["prepared by", "Alan Chester"],
-            ["edition", "v2026.04 · rev 01"],
+            ["edition", "v2026.05 · rev 02"],
             ["scope", "personal · public-facing"],
           ].map(([k, v]) => (
             <div key={k} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
@@ -458,7 +458,7 @@ function PageColorType({ n, total, swatches }) {
             ∀ ε &gt; 0, ∃ δ &gt; 0
           </div>
           <div style={{ marginTop: 14, fontFamily: "var(--ac-mono)", fontSize: 12, color: BD_PALETTE.ink, letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.5 }}>
-            v2026.04 · ref ac-0426
+            v2026.05 · ref ac-0426
           </div>
           <div style={{ marginTop: 12, fontFamily: "var(--ac-mono)", fontSize: 10, color: BD_PALETTE.muted, letterSpacing: "0.06em" }}>
             var(--ac-mono) · labels · math

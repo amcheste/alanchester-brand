@@ -5,7 +5,7 @@
 > Tokens, components, and assets. Everything I need to identify my work in code.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2026.04.0-0B0B0C.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2026.05.0-0B0B0C.svg)](package.json)
 
 ---
 
@@ -187,7 +187,7 @@ A and C, vertically centered. Don't redraw it; use the components or SVGs.
 ## Versioning
 
 Brand versions are dated: **`YYYY.MM.PATCH`**. The current version is
-**`2026.04.0`**, April 2026, initial publication.
+**`2026.05.0`**, May 2026.
 
 A bump to the *minor* (month) component means the system extended:
 new tokens, new components. A bump to *patch* means a fix:

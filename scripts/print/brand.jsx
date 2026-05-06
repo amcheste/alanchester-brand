@@ -315,7 +315,7 @@ The data names the difference, and the difference becomes the shape of the work.
 
         <TypeSpec label="mono · UI / label" meta="var(--ac-mono) · 400 · 0.08em · UPPER">
           <div style={{ fontFamily: "var(--ac-mono)", fontSize: 14, lineHeight: 1.5, letterSpacing: "0.08em", textTransform: "uppercase", color: PALETTE.ink }}>
-            v2026.04 · alan chester · personal mark
+            v2026.05 · alan chester · personal mark
           </div>
         </TypeSpec>
 
@@ -917,7 +917,7 @@ function StyleGuideCard({ swatches }) {
       {/* Header */}
       <header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", paddingBottom: 32, borderBottom: `1px solid ${PALETTE.ink}` }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <MetaLabel>brand · identity card · v2026.04</MetaLabel>
+          <MetaLabel>brand · identity card · v2026.05</MetaLabel>
           <Wordmark size={48} />
         </div>
         <Monogram size={56} />
@@ -1098,7 +1098,7 @@ function BottomGrid() {
         alan chester · personal brand
       </span>
       <span style={{ fontFamily: "var(--ac-mono)", fontSize: 9, color: PALETTE.muted, letterSpacing: "0.14em" }}>
-        2026.04 / (ε, δ)
+        2026.05 / (ε, δ)
       </span>
     </div>
   );
