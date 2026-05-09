@@ -16,7 +16,7 @@ const BD_PALETTE = {
 
 function Page({ n, total, title, children, dark = false }) {
   const bg = dark ? BD_PALETTE.ink : BD_PALETTE.paper;
-  const fg = dark ? "#FAF8F2" : BD_PALETTE.ink;
+  const fg = dark ? "var(--ac-paper-on-dark)" : BD_PALETTE.ink;
   const sub = dark ? "rgba(255,255,255,0.45)" : BD_PALETTE.muted;
   return (
     <div style={{
@@ -67,7 +67,7 @@ function H2({ children, dark = false }) {
     <h2 style={{
       fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 22,
       lineHeight: 1.15, letterSpacing: "-0.02em", margin: "0 0 12px",
-      color: dark ? "#FAF8F2" : BD_PALETTE.ink,
+      color: dark ? "var(--ac-paper-on-dark)" : BD_PALETTE.ink,
     }}>
       {children}
     </h2>
@@ -111,7 +111,7 @@ function PageCover({ n, total }) {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 84, lineHeight: 0.96, letterSpacing: "-0.04em", color: "#FAF8F2" }}>
+          <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 84, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--ac-paper-on-dark)" }}>
             Alan Chester<br/>
             Personal Brand
           </div>
@@ -135,7 +135,7 @@ function PageCover({ n, total }) {
           ].map(([k, v]) => (
             <div key={k} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
               <Eyebrow dark>{k}</Eyebrow>
-              <span style={{ fontFamily: "var(--ac-mono)", fontSize: 12, color: "#FAF8F2", letterSpacing: "0" }}>{v}</span>
+              <span style={{ fontFamily: "var(--ac-mono)", fontSize: 12, color: "var(--ac-paper-on-dark)", letterSpacing: "0" }}>{v}</span>
             </div>
           ))}
         </div>
@@ -316,9 +316,9 @@ function PageMethod({ n, total }) {
         </div>
       </div>
 
-      <div style={{ marginTop: 24, padding: "20px 24px", background: BD_PALETTE.ink, color: "#FAF8F2" }}>
+      <div style={{ marginTop: 24, padding: "20px 24px", background: BD_PALETTE.ink, color: "var(--ac-paper-on-dark)" }}>
         <Eyebrow dark>extension</Eyebrow>
-        <div style={{ marginTop: 10, fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 22, lineHeight: 1.2, letterSpacing: "-0.02em", color: "#FAF8F2" }}>
+        <div style={{ marginTop: 10, fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 22, lineHeight: 1.2, letterSpacing: "-0.02em", color: "var(--ac-paper-on-dark)" }}>
           For any ε &gt; 0, there exists a δ &gt; 0.<br/>
           <span style={{ color: BD_PALETTE.accent }}>Find the δ.</span>
         </div>
@@ -372,7 +372,7 @@ function PageIdentity({ n, total }) {
           <Eyebrow dark>inverse</Eyebrow>
           <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 14 }}>
             <Monogram size={44} variant="outline" />
-            <Wordmark size={26} color="#FAF8F2" />
+            <Wordmark size={26} color="var(--ac-paper-on-dark)" />
           </div>
         </div>
       </div>
@@ -667,7 +667,7 @@ function PageTransitions({ n, total }) {
         </div>
       </div>
 
-      <div style={{ marginTop: 20, padding: "16px 20px", background: BD_PALETTE.ink, color: "#FAF8F2" }}>
+      <div style={{ marginTop: 20, padding: "16px 20px", background: BD_PALETTE.ink, color: "var(--ac-paper-on-dark)" }}>
         <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 18, lineHeight: 1.3, letterSpacing: "-0.015em" }}>
           Cloud, then AI.{" "}
           <span style={{ color: BD_PALETTE.accent }}>Same pattern, smaller δ.</span>
@@ -731,7 +731,7 @@ function PageProductMethod({ n, total }) {
           </div>
         </div>
 
-        <div style={{ padding: 18, background: BD_PALETTE.ink, color: "#FAF8F2" }}>
+        <div style={{ padding: 18, background: BD_PALETTE.ink, color: "var(--ac-paper-on-dark)" }}>
           <Eyebrow dark>artifacts</Eyebrow>
           <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8, fontFamily: "var(--ac-sans)", fontSize: 12.5, lineHeight: 1.5 }}>
             {[
@@ -973,7 +973,7 @@ function PageVoice({ n, total }) {
         <VoiceRow yes="Find the δ." no="Game-changing breakthrough." />
       </div>
 
-      <div style={{ marginTop: 24, padding: 20, background: BD_PALETTE.ink, color: "#FAF8F2" }}>
+      <div style={{ marginTop: 24, padding: 20, background: BD_PALETTE.ink, color: "var(--ac-paper-on-dark)" }}>
         <Eyebrow dark>signature lines</Eyebrow>
         <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 12, fontFamily: "var(--ac-sans)", fontSize: 16, lineHeight: 1.4, letterSpacing: "-0.01em" }}>
           <div>Every <span style={{ color: BD_PALETTE.accent }}>goal</span> is an ε. Every <span style={{ color: BD_PALETTE.accent }}>decision</span> is a δ. <span style={{ color: BD_PALETTE.accent }}>Data</span> points the gradient.</div>
@@ -1011,7 +1011,7 @@ function PageClose({ n, total }) {
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", paddingTop: 32 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <Eyebrow dark>13 · in summary</Eyebrow>
-          <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 56, lineHeight: 1, letterSpacing: "-0.035em", color: "#FAF8F2" }}>
+          <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 56, lineHeight: 1, letterSpacing: "-0.035em", color: "var(--ac-paper-on-dark)" }}>
             One goal.<br/>
             One δ.<br/>
             <span style={{ color: BD_PALETTE.accent }}>Open by default.</span>
@@ -1031,7 +1031,7 @@ function PageClose({ n, total }) {
           ].map(([k, v]) => (
             <div key={k} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
               <Eyebrow dark>{k}</Eyebrow>
-              <span style={{ fontFamily: "var(--ac-mono)", fontSize: 13, color: "#FAF8F2", letterSpacing: "0" }}>{v}</span>
+              <span style={{ fontFamily: "var(--ac-mono)", fontSize: 13, color: "var(--ac-paper-on-dark)", letterSpacing: "0" }}>{v}</span>
             </div>
           ))}
         </div>
