@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to dated semver: YYYY.MM.PATCH.
 
+## [2026.06.0] - 2026-06
+### Added
+- `assets/temperament-axes.svg` — new mark in the brand vocabulary, visualizing the five-axis temperament calibration introduced in v2026.05.0 (`docs/voice.md` `## temperament`).
+- `assets/png/temperament-axes-{600,900,1200,2400}.png` — PNG exports of the mark at standard asset sizes.
+
+### Notes
+- The mark sits alongside the monogram, wordmark, and equation marks in the brand vocabulary. Hunter green appears only on position markers (the data), per the accent rule. Axes and labels stay ink and muted.
+- This completes the v1.1 alignment with the cam-family-brand-system. The personal brand surface is now coherent across tokens, prose, and marks. Future propagation work (LinkedIn, GitHub profile, personal site, side projects) pulls from this state.
+
 ## [2026.05.0] - 2026-05
 ### Added
 - `docs/voice.md` — `## temperament` section naming the five-axis calibration (warmth, contrast, edge softness, whitespace rhythm, voice cadence) and the personal-brand settings: cool, high contrast, sharp, austere, compressed.
