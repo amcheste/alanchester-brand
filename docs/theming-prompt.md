@@ -213,19 +213,25 @@ Stop and ask if any of this is unclear before opening the PR.
 
 ## customization
 
-The prompt is parameterized for **my** brand specifically. Two things
-will need adjusting when the family system extends:
+The prompt is parameterized for **my** brand specifically. Three things
+will need adjusting when applied to another brand in the family system:
 
-1. **accent color**. Currently hardcoded to hunter green `#1F4D3A`
-   (Alan's accent per the cam-family-brand-system). When applying to
-   one of Meg's repos, swap to sage teal `#6B8E7F`. Future family
-   brands likewise.
-2. **sources of truth**. The brand-as-code repo URL. When a sister
-   repo exists for Meg or a CAM business, point at that one.
+1. **accent color**. Currently hardcoded to hunter green `#1F4D3A`.
+   Each family brand has its own accent. Capture the target brand's
+   accent before running the prompt. The cam-family-brand-system
+   documentation lists per-brand values.
+2. **temperament axis settings**. The five-axis calibration is
+   per-person. Alan's settings (cool, high contrast, sharp, austere,
+   compressed) should not be propagated outside this brand. Capture
+   the target brand's axis calibration and adjust corner radius,
+   contrast ratios, line-weight defaults, and voice cadence accordingly.
+3. **sources of truth**. The brand-as-code repo URL points at this
+   repo. Each family brand maintains its own repo; point at that one
+   when applying.
 
 Plan: maintain a small per-brand variant of this prompt as the family
-expands. Keep them all in `docs/` here for now since `alanchester-brand`
-is the anchor.
+expands. Keep them all in `docs/` here for now since this repo is the
+anchor.
 
 ## lessons learned
 

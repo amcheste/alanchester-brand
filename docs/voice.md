@@ -1,7 +1,8 @@
 # voice
 
-How brand surfaces sound. Captured from the april 2026 reconciliation
-between the v2026.04 design system and Meg's messaging refinement.
+How brand surfaces sound. The voice rules below capture the personal
+brand voice in its v2026.04 form, refined across an april 2026
+reconciliation pass.
 
 The voice is calibrated, precise, and confident in small movements.
 
@@ -81,6 +82,32 @@ the moment of meaningful change. Not decoration.
 If a green element doesn't represent **data, evidence, or a pivot**,
 demote it to ink. If hunter green is on every page, the rule has
 been broken.
+
+## temperament
+
+The visual fingerprint sits at specific points on five axes. These
+calibrate decisions when a rule doesn't directly apply.
+
+**warmth: cool.** hunter green sits in the green-blue register. cool
+signals calm, observation, analytical depth.
+
+**contrast: high.** ink on warm white, no transitional shades. high
+contrast signals precision and confidence in absolute claims.
+
+**edge softness: sharp.** 90-degree corners, full-width hairline rules.
+sharp signals structure, authority, definitive boundaries.
+
+**whitespace rhythm: austere.** generous, almost mathematical. austere
+signals discipline and room to think.
+
+**voice cadence: compressed.** structured, declarative sentences.
+compressed signals quiet conviction.
+
+When you're unsure whether a corner should be rounded or a sentence
+should soften, the axis settings tell you. Sharp corners. Compressed
+sentences. Cool palette. Every time.
+
+The full framework lives in the cam-family-brand-system documentation.
 
 ## restraint clause
 

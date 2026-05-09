@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to dated semver: YYYY.MM.PATCH.
 
+## [2026.05.0] - 2026-05
+### Added
+- `docs/voice.md` — `## temperament` section naming the five-axis calibration (warmth, contrast, edge softness, whitespace rhythm, voice cadence) and the personal-brand settings: cool, high contrast, sharp, austere, compressed.
+
+### Changed
+- `docs/voice.md` — opening attribution generalized; removed external reference.
+- `docs/theming-prompt.md` — customization block restructured. Now describes per-brand parameters (accent, axis settings, sources of truth) without enumerating specific brands. The cam-family-brand-system documentation is the source of truth for per-brand values.
+
+### Notes
+- This is the prose-and-tokens half of the v1.1 alignment with the cam-family-brand-system. Visual additions ship in a later PR via the claude-design-handoff workflow.
+
 ## [2026.04.1] - 2026-05
 ### Added
 - `docs/voice.md` — voice rules for brand copy (no em dashes, calibrated hedges, numerical specificity, etc.).
