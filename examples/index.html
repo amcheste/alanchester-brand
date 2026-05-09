@@ -80,7 +80,8 @@
     .swatch.paper   { background: var(--ac-paper);  color: var(--ac-ink); border: 1px solid var(--ac-mist); }
     .swatch.muted   { background: var(--ac-muted);  color: white; }
     .swatch.accent  { background: var(--ac-accent); color: white; }
-    .equation { font-family: var(--ac-mono); font-size: 36px; color: var(--ac-accent); }
+    .equation { font-family: var(--ac-mono); font-size: 36px; color: var(--ac-ink); }
+    .equation .epsilon { color: var(--ac-accent); }
   </style>
 </head>
 <body>
@@ -118,7 +119,7 @@
   <section>
     <p class="eyebrow">the equation</p>
     <h2>For any ε &gt; 0, there exists a δ &gt; 0.</h2>
-    <p class="equation">∀ ε &gt; 0, ∃ δ &gt; 0</p>
+    <p class="equation">∀ <span class="epsilon">ε</span> &gt; 0, ∃ δ &gt; 0</p>
   </section>
 
 </body>
