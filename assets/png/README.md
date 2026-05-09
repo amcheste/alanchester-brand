@@ -12,11 +12,11 @@ profiles, favicons.
 | `monogram-outline-{256,512,800,1024}.png` | `monogram-outline.svg`  | Mark on paper backgrounds.                        |
 | `monogram-accent-{256,512,800,1024}.png`  | `monogram-accent.svg`   | Mark on light backgrounds where you want presence. |
 | `wordmark-{800,1600,3200}.png`            | `wordmark.svg`          | Email signatures, slide footers, document headers. |
-| `epsilon-delta-{600,900,1200,2400}.png`   | `epsilon-delta.svg`     | The signature equation. Identity plates.          |
+| `epsilon-delta-{600,900,1200,2400}.png`   | `epsilon-delta.svg`     | The signature equation. Slide footers, document headers, signature blocks. |
 
 All PNGs have a transparent background where the source SVG does (outline
 monogram, wordmark, equation). Solid and accent monograms have their respective
-ink/proof-green grounds baked in.
+ink/Hunter Green grounds baked in.
 
 ## If you need bigger
 

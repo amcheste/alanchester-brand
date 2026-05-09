@@ -261,7 +261,7 @@ function PaletteBoard({ swatches }) {
           <MetaLabel style={{ color: "rgba(255,255,255,0.5)" }}>on ink</MetaLabel>
           <div style={{ marginTop: 20 }}><Wordmark size={36} color={PALETTE.paper} /></div>
           <p style={{ marginTop: 20, fontFamily: "var(--ac-sans)", fontSize: 14, lineHeight: 1.55, color: "rgba(255,255,255,0.75)", maxWidth: 360, letterSpacing: "-0.005em" }}>
-            For any <span style={{ color: PALETTE.accent, fontFamily: "var(--ac-mono)" }}>ε &gt; 0</span>, there exists a <span style={{ color: "#FAF8F2", fontFamily: "var(--ac-mono)" }}>δ &gt; 0</span>.
+            For any <span style={{ color: PALETTE.accent, fontFamily: "var(--ac-mono)" }}>ε &gt; 0</span>, there exists a <span style={{ color: "var(--ac-paper-on-dark)", fontFamily: "var(--ac-mono)" }}>δ &gt; 0</span>.
           </p>
         </div>
       </div>
@@ -472,7 +472,7 @@ function LinkedInBannerBoard() {
         <span style={{ fontFamily: "var(--ac-mono)", fontSize: 12, letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
          . ε
         </span>
-        <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 92, lineHeight: 0.95, letterSpacing: "-0.04em", color: "#FAF8F2", whiteSpace: "nowrap" }}>
+        <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 500, fontSize: 92, lineHeight: 0.95, letterSpacing: "-0.04em", color: "var(--ac-paper-on-dark)", whiteSpace: "nowrap" }}>
           Alan Chester
         </div>
         <div style={{ fontFamily: "var(--ac-sans)", fontWeight: 400, fontSize: 22, lineHeight: 1.3, letterSpacing: "-0.015em", color: "rgba(255,255,255,0.78)", maxWidth: 760 }}>
