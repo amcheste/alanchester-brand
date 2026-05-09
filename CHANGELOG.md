@@ -9,6 +9,11 @@ and this project adheres to dated semver: YYYY.MM.PATCH.
 - `assets/temperament-axes.svg` — new mark in the brand vocabulary, visualizing the five-axis temperament calibration introduced in v2026.05.0 (`docs/voice.md` `## temperament`).
 - `assets/png/temperament-axes-{600,900,1200,2400}.png` — PNG exports of the mark at standard asset sizes.
 
+### Fixed
+- `package-lock.json` regenerated to match `package.json` (was stale at `2026.04.0` across PRs #9, #10, #11; now at `2026.06.0`).
+- `assets/png/README.md` — "identity plates" reference on the equation row replaced with surface-specific guidance, per the option-A accent rule decision in PR #9. "proof-green" vocabulary replaced with "Hunter Green" for consistency with tokens and `docs/voice.md`.
+- `scripts/print/brand.jsx` — 2 remaining inline `#FAF8F2` references swapped for `var(--ac-paper-on-dark)`, completing the token migration started in PR #9.
+
 ### Notes
 - The mark sits alongside the monogram, wordmark, and equation marks in the brand vocabulary. Hunter green appears only on position markers (the data), per the accent rule. Axes and labels stay ink and muted.
 - This completes the v1.1 alignment with the cam-family-brand-system. The personal brand surface is now coherent across tokens, prose, and marks. Future propagation work (LinkedIn, GitHub profile, personal site, side projects) pulls from this state.
