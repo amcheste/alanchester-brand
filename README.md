@@ -5,7 +5,7 @@
 > Tokens, components, and assets. Everything I need to identify my work in code.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2026.05.0-0B0B0C.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2026.06.0-0B0B0C.svg)](package.json)
 
 ---
 
@@ -141,9 +141,15 @@ structural. The full type scale is in [`tokens/typography.css`](tokens/typograph
 | Monogram (accent)                                            | `variant="accent"`  | `assets/monogram-accent.svg`  |
 | Wordmark · `alan chester.`                                   | `<Wordmark />`   | `assets/wordmark.svg`           |
 | Equation · `∀ ε > 0, ∃ δ > 0`                                | `<EpsilonDelta />` | `assets/epsilon-delta.svg`    |
+| Temperament axes · five-axis calibration                     | (asset only)     | `assets/temperament-axes.svg`   |
 
 The monogram is **A · ε · C**. The ε is set at exactly 50% of the cap-height of
 A and C, vertically centered. Don't redraw it; use the components or SVGs.
+
+The temperament-axes mark visualizes the five-axis calibration introduced in
+v2026.05.0 ([`docs/voice.md`](docs/voice.md) `## temperament`): warmth, contrast,
+edge softness, whitespace rhythm, voice cadence. Hunter green sits on the
+position markers, never on the axes or labels. Asset only, no React wrapper.
 
 ---
 
@@ -187,7 +193,7 @@ A and C, vertically centered. Don't redraw it; use the components or SVGs.
 ## Versioning
 
 Brand versions are dated: **`YYYY.MM.PATCH`**. The current version is
-**`2026.05.0`**, May 2026, family-system v1.1 alignment (prose layer).
+**`2026.06.0`**, June 2026, temperament-axes mark added (v1.1 alignment complete).
 
 A bump to the *minor* (month) component means the system extended:
 new tokens, new components. A bump to *patch* means a fix:
