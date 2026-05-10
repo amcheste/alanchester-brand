@@ -18,6 +18,10 @@ finished outputs.
 For brand voice rules that apply to any prose written for this repo
 (including content inside `brand-document.jsx`), see [`voice.md`](voice.md).
 
+For the inverse direction (priming a fresh claude design session with
+this brand's rules before any work begins), see
+[`design-session-brief.md`](design-session-brief.md).
+
 ## what to ask claude design for
 
 When you're ready to push updates from a design session into this repo,
