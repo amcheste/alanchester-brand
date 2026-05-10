@@ -22,6 +22,10 @@ For the inverse direction (priming a fresh claude design session with
 this brand's rules before any work begins), see
 [`design-session-brief.md`](design-session-brief.md).
 
+For the current compliance snapshot across all downstream repos that
+consume this brand, see [`compliance-status.md`](compliance-status.md).
+Regenerate with `scripts/audit-downstream.sh`.
+
 ## what to ask claude design for
 
 When you're ready to push updates from a design session into this repo,

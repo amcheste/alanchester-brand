@@ -1,0 +1,240 @@
+#!/usr/bin/env bash
+#
+# audit-downstream.sh
+#
+# Audits downstream repos for compliance with the alanchester-brand
+# system. Outputs a markdown report to stdout suitable for piping
+# to docs/compliance-status.md.
+#
+# Usage:
+#   GH_TOKEN=$(~/.claude/scripts/gh-app-token.sh) \
+#     scripts/audit-downstream.sh > docs/compliance-status.md
+#
+# Requires:
+#   - gh (GitHub CLI), authenticated via $GH_TOKEN
+#   - git
+#
+# Per-repo checks (all mechanical, no semantic judgment):
+#
+#   1. license badge color
+#      Pass if README's license badge URL contains the canonical
+#      accent hex (1F4D3A). Fail if a license badge exists with any
+#      other color. "none" if no license badge at all.
+#
+#   2. off-palette hex count
+#      Count of unique non-canonical hex values found in source files
+#      (css, scss, jsx, tsx, ts, js, html, svg). Excludes generated
+#      content (node_modules, dist, build, .next, coverage). The
+#      canonical set is derived from tokens/colors.json in the brand
+#      repo (8 hexes including paper-on-dark).
+#
+#   3. brand reference
+#      "yes" if README mentions @amcheste/brand or alanchester-brand,
+#      OR if package.json depends on @amcheste/brand. "no" otherwise.
+#
+#   4. forbidden brand-isolation terms
+#      Count of \bmeg\b, \bsage\b, 6B8E7F, \bbookkeeping\b,
+#      cam advisory, cam photos, cam holdings in README, CHANGELOG,
+#      or docs/. Word-boundaries prevent false positives.
+
+set -uo pipefail
+
+# ─── inventory ────────────────────────────────────────────────────────────
+# Format: tier:org/repo
+# Tier 1: public, brand-visible
+# Tier 2: private, personal
+REPOS=(
+  "1:amcheste/amcheste"
+  "1:amcheste/engineering-handbook"
+  "1:amcheste/repo-template"
+  "1:amcheste/overleaf-mcp"
+  "1:amcheste/claude-teams-operator"
+  "1:amcheste/mac-dev-setup"
+  "1:amcheste/paper-skills"
+  "1:amcheste/ea-agent"
+  "1:amcheste/golf-coach-agent"
+  "1:amcheste/pokemon-red-ai"
+  "2:amcheste/niche-hunter"
+  "2:amcheste/overleaf-mcp-site"
+  "2:amcheste/ea-agent-personal"
+  "2:amcheste/assets"
+  "2:amcheste/market-lens"
+)
+
+# ─── brand constants ──────────────────────────────────────────────────────
+# Canonical hex set from tokens/colors.json (+ paper-on-dark from colors.css)
+CANONICAL_HEXES="0B0B0C 2B2B2E 8A8A8E E6E4DE F6F4EE 1F4D3A B45A3C FAF8F2"
+CANONICAL_PATTERN=$(echo "$CANONICAL_HEXES" | tr ' ' '|')
+ACCENT_HEX="1F4D3A"
+
+WORK=$(mktemp -d)
+trap "rm -rf '$WORK'" EXIT
+
+# ─── helpers ──────────────────────────────────────────────────────────────
+check_license_badge() {
+  local readme="$1"
+  if [ ! -f "$readme" ]; then echo "no-readme"; return; fi
+  if grep -qiE "License[^)]*${ACCENT_HEX}" "$readme"; then
+    echo "ok"
+  elif grep -qiE 'License-[A-Za-z0-9]+-[0-9A-Fa-f]{6}' "$readme"; then
+    echo "off-brand"
+  else
+    echo "none"
+  fi
+}
+
+count_noncanonical_hex() {
+  local dir="$1"
+  grep -rohE "#[0-9A-Fa-f]{6}" \
+    --include="*.css" --include="*.scss" \
+    --include="*.tsx" --include="*.jsx" \
+    --include="*.ts" --include="*.js" \
+    --include="*.html" --include="*.svg" \
+    --exclude-dir=node_modules --exclude-dir=dist \
+    --exclude-dir=build --exclude-dir=.next \
+    --exclude-dir=coverage --exclude-dir=.git \
+    "$dir" 2>/dev/null \
+    | tr '[:lower:]' '[:upper:]' | sed 's/#//' \
+    | grep -vE "^(${CANONICAL_PATTERN})$" \
+    | sort -u | wc -l | tr -d ' '
+}
+
+check_brand_reference() {
+  local dir="$1"
+  if [ -f "$dir/README.md" ] && \
+     grep -qE "@amcheste/brand|alanchester-brand" "$dir/README.md" 2>/dev/null; then
+    echo "yes"
+  elif find "$dir" -maxdepth 3 -name "package.json" -not -path "*/node_modules/*" \
+       -exec grep -lE '"@amcheste/brand"' {} + 2>/dev/null | head -1 | grep -q .; then
+    echo "yes (pkg)"
+  else
+    echo "no"
+  fi
+}
+
+count_forbidden_terms() {
+  local dir="$1"
+  local count=0
+  for target in "$dir/README.md" "$dir/CHANGELOG.md" "$dir/docs"; do
+    [ -e "$target" ] || continue
+    n=$(grep -rEi '\bmeg\b|\bsage\b|6B8E7F|\bbookkeeping\b|cam advisory|cam photos|cam holdings' \
+        "$target" 2>/dev/null | wc -l | tr -d ' ')
+    count=$((count + n))
+  done
+  echo "$count"
+}
+
+# ─── audit one repo ───────────────────────────────────────────────────────
+audit_repo() {
+  local entry="$1"
+  local tier="${entry%%:*}"
+  local repo="${entry#*:}"
+  local name="${repo##*/}"
+  local dir="$WORK/$name"
+
+  echo "auditing $repo (tier $tier)..." >&2
+
+  if ! gh repo clone "$repo" "$dir" -- --depth=1 --quiet 2>/dev/null; then
+    echo "| \`$repo\` | (no access or clone failed) | n/a | n/a | n/a |"
+    return
+  fi
+
+  local lic hex bref forb
+  lic=$(check_license_badge "$dir/README.md")
+  hex=$(count_noncanonical_hex "$dir")
+  bref=$(check_brand_reference "$dir")
+  forb=$(count_forbidden_terms "$dir")
+
+  echo "| \`$repo\` | $lic | $hex | $bref | $forb |"
+}
+
+# ─── report ───────────────────────────────────────────────────────────────
+cat <<'HEADER'
+# compliance status
+
+Snapshot of how each downstream repo aligns with the alanchester-brand
+system. Generated by `scripts/audit-downstream.sh`.
+
+For the spec each repo should match, see
+[`theming-prompt.md`](theming-prompt.md). For where this audit fits
+in the broader brand-as-code workflow, see
+[`claude-design-handoff.md`](claude-design-handoff.md).
+
+## audit dimensions
+
+All checks are mechanical, no semantic judgment.
+
+- **license badge**: README's license badge URL contains the canonical
+  accent hex `#1F4D3A`. `ok` = pass. `off-brand` = badge exists with a
+  different color. `none` = no license badge.
+- **off-palette hexes**: count of unique hex colors in source files
+  (css, scss, jsx, tsx, ts, js, html, svg) that aren't in the canonical
+  brand set (`0B0B0C 2B2B2E 8A8A8E E6E4DE F6F4EE 1F4D3A B45A3C FAF8F2`).
+  Excludes `node_modules/`, `dist/`, `build/`, `.next/`, `coverage/`,
+  `.git/`. `0` = clean.
+- **brand ref**: `yes` if README mentions `@amcheste/brand` or
+  `alanchester-brand`. `yes (pkg)` if `package.json` depends on it.
+  `no` otherwise.
+- **forbidden terms**: count of brand-isolation violations in README,
+  CHANGELOG, or `docs/`. Pattern matches `\bmeg\b`, `\bsage\b`,
+  `6B8E7F`, `\bbookkeeping\b`, `cam advisory`, `cam photos`,
+  `cam holdings`. Word boundaries prevent the `messages`/`sage`
+  false positive. `0` = clean.
+
+## tier 1 (public, brand-visible)
+
+HEADER
+
+echo "| repo | license badge | off-palette hexes | brand ref | forbidden terms |"
+echo "| --- | --- | --- | --- | --- |"
+for entry in "${REPOS[@]}"; do
+  [ "${entry%%:*}" = "1" ] || continue
+  audit_repo "$entry"
+done
+
+cat <<'TIER2'
+
+## tier 2 (private, personal)
+
+TIER2
+
+echo "| repo | license badge | off-palette hexes | brand ref | forbidden terms |"
+echo "| --- | --- | --- | --- | --- |"
+for entry in "${REPOS[@]}"; do
+  [ "${entry%%:*}" = "2" ] || continue
+  audit_repo "$entry"
+done
+
+TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+cat <<'STATIC_TAIL' | sed -e "s|@@TIMESTAMP@@|${TIMESTAMP}|" -e "s|@@HEXES@@|${CANONICAL_HEXES}|"
+
+## interpreting the table
+
+- A row with `license badge: ok`, `off-palette hexes: 0`, `forbidden terms: 0`,
+  and `brand ref: yes` (or `yes (pkg)`) is fully compliant.
+- `off-palette hexes` of 1-3 is usually OK (status badges, syntax-highlight
+  themes, third-party widgets often bake in colors). Worth investigating
+  above ~5.
+- `brand ref: no` is expected for repos that legitimately don't consume
+  the brand (infrastructure, internal tools). Promote to "yes" only where
+  the brand should propagate.
+- Any nonzero count for `forbidden terms` is a real violation; investigate.
+
+## audit metadata
+
+- generated: `@@TIMESTAMP@@`
+- script: `scripts/audit-downstream.sh`
+- canonical hex set: `@@HEXES@@`
+- excluded from audit: `alanchester-brand` (source of truth, self-audited),
+  `cam-brand` (sister brand in cam-family-brand-system, separate audit
+  framework), `pokemon-rl-paper` (private during double-blind review).
+
+## next steps
+
+1. For repos with significant drift, run `docs/theming-prompt.md` against
+   them to produce an aligning PR.
+2. `repo-template` first if it shows drift. Compliance there propagates
+   to every future repo.
+3. Re-run this audit after each batch of alignment PRs to track progress.
+STATIC_TAIL
