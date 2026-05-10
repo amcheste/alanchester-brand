@@ -1,0 +1,98 @@
+name: brand-audit
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: forbidden brand-isolation terms
+        run: |
+          set +e
+          matches=$(grep -rEin '\bmeg\b|\bsage\b|6B8E7F|\bbookkeeping\b|cam advisory|cam photos|cam holdings' \
+            README.md CHANGELOG.md docs/ 2>/dev/null)
+          if [ -n "$matches" ]; then
+            echo "::error::forbidden brand-isolation terms found in public surfaces"
+            echo "$matches"
+            exit 1
+          fi
+          echo "ok: no other-venture references in README, CHANGELOG, or docs/"
+
+      - name: version coherence
+        run: |
+          set -e
+          PKG=$(node -p "require('./package.json').version")
+          LOCK=$(node -p "require('./package-lock.json').version")
+          BADGE=$(grep -oE 'version-[0-9]{4}\.[0-9]+\.[0-9]+' README.md | head -1 | sed 's/version-//')
+          CHLOG=$(grep -oE '## \[[0-9]{4}\.[0-9]+\.[0-9]+\]' CHANGELOG.md | head -1 | sed 's/## \[//;s/\]//')
+          COLORS=$(node -p "require('./tokens/colors.json').version")
+          TOKENS=$(node -p "require('./tokens/tokens.json').version")
+
+          fail=0
+          for pair in "package-lock:$LOCK" "README badge:$BADGE" "CHANGELOG latest:$CHLOG" "tokens/colors.json:$COLORS" "tokens/tokens.json:$TOKENS"; do
+            label="${pair%%:*}"
+            val="${pair#*:}"
+            if [ "$PKG" != "$val" ]; then
+              echo "::error::version mismatch: package.json=$PKG, $label=$val"
+              fail=1
+            fi
+          done
+
+          if [ "$fail" -eq 0 ]; then
+            echo "ok: all version markers agree on $PKG"
+          fi
+          exit "$fail"
+
+      - name: marks-table coverage
+        run: |
+          set -e
+          missing=""
+          for f in assets/*.svg; do
+            name=$(basename "$f")
+            haystack="README.md"
+            if [ -f docs/templates-index.md ]; then
+              haystack="$haystack docs/templates-index.md"
+            fi
+            if ! grep -qF "$name" $haystack 2>/dev/null; then
+              missing="$missing $name"
+            fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::SVGs not referenced in README marks table or docs/templates-index.md:"
+            for n in $missing; do echo "  $n"; done
+            exit 1
+          fi
+          echo "ok: every assets/*.svg is referenced"
+
+      - name: svgs use only canonical hex
+        run: |
+          python3 <<'PY'
+          import re, glob, sys
+          canonical = set(re.findall(r'#[0-9A-Fa-f]{6}', open('tokens/colors.json').read()))
+          canonical = {h.upper() for h in canonical}
+
+          violations = []
+          for svg_path in sorted(glob.glob('assets/*.svg')):
+              used = set(re.findall(r'#[0-9A-Fa-f]{6}', open(svg_path).read()))
+              used = {h.upper() for h in used}
+              bad = used - canonical
+              if bad:
+                  violations.append(f"{svg_path}: uses non-canonical hex {sorted(bad)}")
+
+          if violations:
+              print('::error::svgs use non-canonical hex values')
+              for v in violations:
+                  print(f'  {v}')
+              sys.exit(1)
+          print(f'ok: all svgs use only canonical hex (canonical set: {sorted(canonical)})')
+          PY
