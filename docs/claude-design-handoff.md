@@ -22,6 +22,10 @@ For the inverse direction (priming a fresh claude design session with
 this brand's rules before any work begins), see
 [`design-session-brief.md`](design-session-brief.md).
 
+For where brand-aligned templates (decks, letterhead, business cards,
+email signatures, social cards) are stored and how they're versioned,
+see [`templates-index.md`](templates-index.md).
+
 For the canonical layout of project banners that consuming repos
 display at the top of their README, see [`banner-spec.md`](banner-spec.md).
 Banners are generated per repo via claude design, landed in each
