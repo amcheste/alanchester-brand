@@ -22,6 +22,11 @@ For the inverse direction (priming a fresh claude design session with
 this brand's rules before any work begins), see
 [`design-session-brief.md`](design-session-brief.md).
 
+For the canonical layout of project banners that consuming repos
+display at the top of their README, see [`banner-spec.md`](banner-spec.md).
+Banners are generated per repo via claude design, landed in each
+repo's own `assets/` directory, never bundled in this brand repo.
+
 ## what to ask claude design for
 
 When you're ready to push updates from a design session into this repo,

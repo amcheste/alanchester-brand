@@ -121,5 +121,6 @@ the theorem," it does not belong.
 - [`docs/claude-design-handoff.md`](claude-design-handoff.md) for the workflow when claude design proposes brand updates
 - [`docs/design-session-brief.md`](design-session-brief.md) for the prompt to paste at the start of any claude design session working in this brand
 - [`docs/theming-prompt.md`](theming-prompt.md) for the turn-key prompt that applies this voice + the rest of the brand to any of my other repos
+- [`docs/banner-spec.md`](banner-spec.md) for the canonical layout of project banners (top of README on consuming repos)
 - [`docs/brand-document.pdf`](brand-document.pdf) for the rendered system reference
 - [`scripts/print/`](../scripts/print/) for the source that produces the PDF
