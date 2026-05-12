@@ -4,8 +4,12 @@
 > The personal brand system of [Alan Chester](https://github.com/amcheste).
 > Tokens, components, and assets. Everything I need to identify my work in code.
 
+<div align="center">
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-2026.06.0-0B0B0C.svg)](package.json)
+
+</div>
 
 ---
 
