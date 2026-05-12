@@ -31,6 +31,11 @@ display at the top of their README, see [`banner-spec.md`](banner-spec.md).
 Banners are generated per repo via claude design, landed in each
 repo's own `assets/` directory, never bundled in this brand repo.
 
+For a current compliance snapshot across all downstream repos that
+consume this brand, run `scripts/audit-downstream.sh` locally. The
+report is generated on demand and not committed (it goes stale fast
+as downstream repos change).
+
 ## what to ask claude design for
 
 When you're ready to push updates from a design session into this repo,
