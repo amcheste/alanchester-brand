@@ -24,10 +24,11 @@ All checks are mechanical, no semantic judgment.
   `alanchester-brand`. `yes (pkg)` if `package.json` depends on it.
   `no` otherwise.
 - **forbidden terms**: count of brand-isolation violations in README,
-  CHANGELOG, or `docs/`. Pattern matches `\bmeg\b`, `\bsage\b`,
-  `6B8E7F`, `\bbookkeeping\b`, `cam advisory`, `cam photos`,
-  `cam holdings`. Word boundaries prevent the `messages`/`sage`
-  false positive. `0` = clean.
+  CHANGELOG, or `docs/`. The pattern matches venture-isolated terms
+  (names, palettes, accounting vocabulary that belong to sibling
+  ventures, not this personal brand). See `scripts/audit-downstream.sh`
+  for the canonical regex. Word boundaries prevent common-word false
+  positives. `0` = clean.
 
 ## tier 1 (public, brand-visible)
 
