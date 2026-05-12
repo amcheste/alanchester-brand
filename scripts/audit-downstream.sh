@@ -3,12 +3,13 @@
 # audit-downstream.sh
 #
 # Audits downstream repos for compliance with the alanchester-brand
-# system. Outputs a markdown report to stdout suitable for piping
-# to docs/compliance-status.md.
+# system. Outputs a markdown report to stdout. Generate on demand; the
+# report is not committed (it goes stale fast as downstream repos
+# change).
 #
 # Usage:
 #   GH_TOKEN=$(~/.claude/scripts/gh-app-token.sh) \
-#     scripts/audit-downstream.sh > docs/compliance-status.md
+#     scripts/audit-downstream.sh | less       # or pipe to a local file
 #
 # Requires:
 #   - gh (GitHub CLI), authenticated via $GH_TOKEN
