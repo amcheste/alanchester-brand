@@ -22,8 +22,8 @@ different problem from designing inside it), see
 ## when NOT to use this brief
 
 - Iterating inside an existing session that's already primed.
-- Designs for a separate family brand (Meg, CAM businesses). Those
-  will have their own briefs once each brand ships its guidelines.
+- Designs for a sibling brand inside the cam-family-brand-system.
+  Each brand has its own brief, owned by that brand's repo.
 - Pure code work in a downstream repo. Use
   [`theming-prompt.md`](theming-prompt.md) instead.
 
