@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -17,7 +18,8 @@ jobs:
           node-version: '20'
 
       - name: validate tokens.json
-        run: node -e "JSON.parse(require('fs').readFileSync('tokens/tokens.json','utf8')); console.log('tokens/tokens.json: ok');"
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('tokens/tokens.json','utf8')); console.log('tokens/tokens.json: ok');"
 
       - name: validate svg assets
         run: |
