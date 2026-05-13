@@ -1,3 +1,4 @@
+# publishes @amcheste/brand to npm on v* tag push.
 name: release
 
 on:
