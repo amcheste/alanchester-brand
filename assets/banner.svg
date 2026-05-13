@@ -18,7 +18,7 @@
   
 
   
-  <text x="720" y="380" text-anchor="middle" font-family="&#39;IBM Plex Serif&#39;,&#39;STIX Two Math&#39;,&#39;Cambria Math&#39;,&#39;DejaVu Serif&#39;,serif" font-size="148" font-weight="400" fill="#FAF8F2" letter-spacing="-1">
+  <text x="720" y="380" text-anchor="middle" font-family="&#39;IBM Plex Serif&#39;,&#39;STIX Two Math&#39;,&#39;Cambria Math&#39;,&#39;DejaVu Serif&#39;,serif" font-size="148" font-weight="400" fill="#F6F4EE" letter-spacing="-1">
     <tspan>∀ </tspan>
     <tspan font-style="italic">ε</tspan>
     <tspan> &gt; 0,  </tspan>
@@ -37,8 +37,8 @@
   <line x1="1464" y1="178" x2="2304" y2="178" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
 
   
-  <text x="1464" y="298" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#FAF8F2">tokens, marks,</text>
-  <text x="1464" y="370" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#FAF8F2">and the theorem</text>
-  <text x="1464" y="442" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#FAF8F2">they reinforce.</text>
+  <text x="1464" y="298" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">tokens, marks,</text>
+  <text x="1464" y="370" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">and the theorem</text>
+  <text x="1464" y="442" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">they reinforce.</text>
 
 </svg>
