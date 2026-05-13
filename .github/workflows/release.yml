@@ -21,7 +21,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: validate tokens.json
-        run: node -e "JSON.parse(require('fs').readFileSync('tokens/tokens.json','utf8')); console.log('tokens/tokens.json: ok');"
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('tokens/tokens.json','utf8')); console.log('tokens/tokens.json: ok');"
 
       - name: validate svg assets
         run: |
