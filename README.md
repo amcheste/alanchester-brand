@@ -1,11 +1,19 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="alanchester-brand · ∀ ε > 0, ∃ δ > 0 with the δ in Hunter Green. For any standard, there exists a step that lands inside it. The brand system. Tokens, marks, and the theorem they reinforce." width="100%">
+</p>
+
+<div align="center">
+
 # `alanchester-brand`
 
-> **For any ε &gt; 0, there exists a δ &gt; 0.**
-> The personal brand system of [Alan Chester](https://github.com/amcheste).
-> Tokens, components, and assets. Everything I need to identify my work in code.
+**For any ε &gt; 0, there exists a δ &gt; 0.**
+
+The personal brand system of [Alan Chester](https://github.com/amcheste). Tokens, components, and assets. Everything I need to identify my work in code.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-1F4D3A.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2026.06.0-0B0B0C.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2026.06.1-0B0B0C.svg)](package.json)
+
+</div>
 
 ---
 
