@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to dated semver: YYYY.MM.PATCH.
 
+## [2026.06.1] - 2026-05-12
+
+### Added
+- `assets/banner.svg` + `assets/banner-1200.png` + `assets/banner-2400.png` — the canonical brand banner per `docs/banner-spec.md`. Theorem-as-hero: ∀ ε > 0, ∃ δ > 0 with only the δ glyph in Hunter Green. Maximum-restraint exemplar for the family.
+- `docs/banner-spec.md` — canonical layout for project banners that consuming repos display at the top of their README.
+- `docs/templates-index.md` — catalog of brand-aligned templates (decks, letterhead, business cards, email signatures, social cards) and how they're versioned.
+- `docs/design-session-brief.md` — primer prompt for new Claude Design sessions to start with brand context.
+- `scripts/audit-downstream.sh` — cross-repo compliance audit, run on demand.
+- `.github/workflows/brand-audit.yml` — four mechanical CI checks (forbidden terms, version coherence, marks coverage, canonical hex).
+- `.github/workflows/release.yml` — npm publish workflow on `v*` tag push.
+
+### Changed
+- README header centered, including title, theorem, and lead description. Banner reference placed at the very top per banner-spec.
+- `docs/voice.md` and `docs/claude-design-handoff.md` cross-references updated to reflect new docs.
+
+### Fixed
+- Brand-audit caught off-palette `#FAF8F2` in the banner SVG; replaced with canonical `#F6F4EE` (`paper` token).
+
 ## [2026.06.0] - 2026-06
 ### Added
 - `assets/temperament-axes.svg` — new mark in the brand vocabulary, visualizing the five-axis temperament calibration introduced in v2026.05.0 (`docs/voice.md` `## temperament`).
