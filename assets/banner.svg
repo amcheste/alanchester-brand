@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2400" height="686" viewBox="0 0 2400 686" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="For any epsilon greater than 0, there exists a delta greater than 0. The personal brand system of Alan Chester.">
+
+  
+  <rect x="0" y="0" width="2400" height="686" fill="#0B0B0C"></rect>
+
+  
+  <g stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" stroke-linecap="square">
+    <path d="M 64 96 L 64 64 L 96 64"></path>
+    <path d="M 2304 64 L 2336 64 L 2336 96"></path>
+    <path d="M 64 590 L 64 622 L 96 622"></path>
+    <path d="M 2304 622 L 2336 622 L 2336 590"></path>
+  </g>
+
+  
+  <line x1="1400" y1="120" x2="1400" y2="566" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+
+  
+
+  
+  <text x="720" y="380" text-anchor="middle" font-family="&#39;IBM Plex Serif&#39;,&#39;STIX Two Math&#39;,&#39;Cambria Math&#39;,&#39;DejaVu Serif&#39;,serif" font-size="148" font-weight="400" fill="#F6F4EE" letter-spacing="-1">
+    <tspan>∀ </tspan>
+    <tspan font-style="italic">ε</tspan>
+    <tspan> &gt; 0,  </tspan>
+    <tspan>∃ </tspan>
+    <tspan font-style="italic" font-weight="500" fill="#1F4D3A">δ</tspan>
+    <tspan> &gt; 0</tspan>
+  </text>
+
+  
+  <text x="720" y="456" text-anchor="middle" font-family="&#39;IBM Plex Serif&#39;,serif" font-style="italic" font-size="22" font-weight="400" fill="rgba(255,255,255,0.65)">for any standard, there exists a step that lands inside it.</text>
+
+  
+
+  
+  <text x="1464" y="158" font-family="&#39;IBM Plex Mono&#39;,monospace" font-size="13" font-weight="400" letter-spacing="3.4" fill="rgba(255,255,255,0.55)">THE BRAND SYSTEM</text>
+  <line x1="1464" y1="178" x2="2304" y2="178" stroke="rgba(255,255,255,0.18)" stroke-width="1"></line>
+
+  
+  <text x="1464" y="298" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">tokens, marks,</text>
+  <text x="1464" y="370" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">and the theorem</text>
+  <text x="1464" y="442" font-family="&#39;IBM Plex Sans&#39;,sans-serif" font-size="60" font-weight="500" letter-spacing="-2.2" fill="#F6F4EE">they reinforce.</text>
+
+</svg>

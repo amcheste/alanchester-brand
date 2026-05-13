@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="alanchester-brand · ∀ ε > 0, ∃ δ > 0 with the δ in Hunter Green. For any standard, there exists a step that lands inside it. The brand system. Tokens, marks, and the theorem they reinforce." width="100%">
+</p>
+
 <div align="center">
 
 # `alanchester-brand`
